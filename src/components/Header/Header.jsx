@@ -6,6 +6,8 @@ const Header = ({ setCartOpen, cartDisplay }) => {
   const handleCartOpen = () => setCartOpen(true)
   const handleCartClose = () => setCartOpen(false)
 
+  
+
   return (
     <>
       <Row className='bg-dark text-white p-3 m-0'>
