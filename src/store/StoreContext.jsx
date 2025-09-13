@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React,{useContext,createContext,useReducer} from 'react'
 
 const StoreContext = createContext({
     items :[],
     cart: [],
+    // eslint-disable-next-line no-unused-vars
     addToCart: (id)=>{},
     removeFromCart: (id)=>{},
 })
