@@ -1,17 +1,26 @@
 import React from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
-const Header = () => {
+import Cart from '../Cart/Cart'
+import HeaderButton from './HeaderButton'
+const Header = ({ setCartOpen, cartDisplay }) => {
+  const handleCartOpen = () => setCartOpen(true)
+  const handleCartClose = () => setCartOpen(false)
+
   return (
     <>
       <Row className='bg-dark text-white p-3 m-0'>
         <Col></Col>
         <Col className='text-center d-flex justify-content-center gap-5'>
-          <span>Home</span>
-          <span>Store</span>
-          <span>About</span>
+     
+        <Col className='text-center d-flex justify-content-center gap-5'>
+          <HeaderButton>Home</HeaderButton>
+          <HeaderButton>Shop</HeaderButton>
+          <HeaderButton>About</HeaderButton>
+        </Col>
+
         </Col>
         <Col className='text-end'>
-          <Button variant="outline-light">Cart</Button>
+          <Button variant="outline-light" onClick={handleCartOpen}>Cart</Button>
         </Col>
       </Row>
 
@@ -20,6 +29,8 @@ const Header = () => {
           <h1 className='text-white m-0'>Generic</h1>
         </Col>
       </Row>
+
+      <Cart show={cartDisplay} handleClose={handleCartClose} />
     </>
   )
 }
