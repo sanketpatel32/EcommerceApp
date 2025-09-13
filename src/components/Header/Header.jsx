@@ -28,7 +28,7 @@ const Header = ({ setCartOpen, cartDisplay }) => {
 
       <Row className='bg-secondary d-flex justify-content-center text-center py-5 m-0'>
         <Col>
-          <h1 className='text-white m-0'>Generic</h1>
+          <h1 className='text-white m-0 display-1 fw-bold'>The Generics</h1>
         </Col>
       </Row>
 
