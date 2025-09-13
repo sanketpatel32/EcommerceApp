@@ -3,6 +3,9 @@ import React from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
 import Cart from '../Cart/Cart'
 import HeaderButton from './HeaderButton'
+import Name from './Name'
+
+
 const Header = ({ setCartOpen, cartDisplay }) => {
   const handleCartOpen = () => setCartOpen(true)
   const handleCartClose = () => setCartOpen(false)
@@ -11,13 +14,13 @@ const Header = ({ setCartOpen, cartDisplay }) => {
 
   return (
     <>
-      <Row className='bg-dark text-white p-3 m-0'>
+      <Row className='bg-dark text-white p-1 m-0 fixed-top'>
         <Col></Col>
         <Col className='text-center d-flex justify-content-center gap-5'>
 
           <Col className='text-center d-flex justify-content-center gap-5'>
-            <HeaderButton> Home </HeaderButton>
-            <HeaderButton>Shop</HeaderButton>
+            <HeaderButton to="/home"> Home </HeaderButton>
+            <HeaderButton to="/product">Shop</HeaderButton>
             <HeaderButton to="/about">  About </HeaderButton>
           </Col>
 
@@ -26,8 +29,7 @@ const Header = ({ setCartOpen, cartDisplay }) => {
           <Button variant="outline-light" onClick={handleCartOpen}>Cart</Button>
         </Col>
       </Row>
-
-
+      <Name />
       <Cart show={cartDisplay} handleClose={handleCartClose} />
     </>
   )
